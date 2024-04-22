@@ -28,4 +28,9 @@ public class TagExampleTest {
     void test4() {
         System.out.println("preprod test");
     }
+
+    @PreprodTest
+    void test5() {
+        System.out.println("preprod test");
+    }
 }
