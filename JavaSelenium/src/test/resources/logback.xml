@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- name指定<appender>的名称
+    class指定<appender>的全限定名  ConsoleAppender的作用是将日志输出到控制台-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--            输出时间格式-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36}.%M\(%line\) -- %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.flowerchar" level="DEBUG" />
+    <logger name="com" level="WARN" />
+    <logger name="flowerchar" level="WARN" />
+    <logger name="org" level="WARN" />
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
