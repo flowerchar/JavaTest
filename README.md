@@ -6,6 +6,14 @@
 4. 如果存在类继承，那么用例顺序是![image-20240421002746222](README.assets/image-20240421002746222.png)；先蓝后黑最后红；如果子类的方法名跟父类的方法名一致了，那么就是重写，会覆盖父类的实现
 5. 可以通过在pom里面配置插件然后使用include标签和exclude标签，指定运行某个包/某个类/某个方法
 6. assertThat包含很多意思，借助其他第三方依赖，可以是相等、包含、大于小于等等
+7. ```java
+   List<Executable> executableList = new ArrayList<>();
+   executableList.add(()->assertThat(title1, containsString("测试")));
+   executableList.add(()->assertThat(title2, "测试开发"));
+   assertAll(executableList);
+   //这样就能实现全部测试
+   ```
+8. 
 
 
 
@@ -102,4 +110,31 @@
 13. 鼠标悬浮移入移出涉及动作链
 
 14. `WebDriver.getPageSource()` 是 WebDriver 的一个方法，用于返回当前页面的源代码。它返回一个字符串，其中包含当前页面的 HTML 代码。通常情况下，这个方法可以用于获取页面上的所有内容，包括文本、标签、属性等，以便进行进一步的分析或处理。有时候一闪而过的弹框很难定位，那么可以使用assertThat(pageSource, containsString("asd"))
+
+15. ```java
+    //传统低效的跳转新标签页
+    String originalHandle = webDriver.getWindowHandle();
+    Set<String> allHandles = webDriver.getWindowHandles();
+    for(String windowHandle: allHandles) {
+        if(!windowHandle.equals(originalWindow)) {
+            webDriver.switchTo().window(windowHandle);
+            break;
+        }
+    }
+    
+    //一种新型便捷的写法。默认率先get的网址就是0
+    driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
+    ```
+
+16. 浏览器console页面能定位到元素，但是java代码却会报错No Such Element的原因多半是**frame**！
+
+17. iframe可以单独存在，但是frame必须和frameset配合使用。frame/iframe可以使用index、id、name、webElement定位。frameset看做是一个普通的标签，并不像iframe一样看做一层
+
+18. xpath定位`$x("//*[@class=\"ma-2 frame3\"]/button")`xpath中可以直接写这种两个类，但是css表达式不行
+
+19. 在主页面中定位到iframe1中的button1并点击后，需要冲iframe1中切回到主页面，然后才能定位到iframe2中的button2
+
+20. 在代码中编写的By.id、By.name等等都会被Selenium转换成css表达式运行
+
+21. 在孙框架里webDriver.switchTo().defaultContent()会跳转到爷框架而不是父框架，也就是说defaultContent是跳到最外层，跳转父级是webDriver.switchTo().parentFrame()
 
