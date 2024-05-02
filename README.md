@@ -138,3 +138,13 @@
 
 21. 在孙框架里webDriver.switchTo().defaultContent()会跳转到爷框架而不是父框架，也就是说defaultContent是跳到最外层，跳转父级是webDriver.switchTo().parentFrame()
 
+22. 点击某个具有id属性的标签，点击完后在该标签下生成一个h1标签，怎么去定位这个h1标签：`$x("//*[@id=\"id1\"]/../h1")`。..就是从这个标签定位到父标签，最后找到下面的h1
+
+23. 文件上传处理：
+
+    1. 有input标签，直接sendKeys![image-20240502145122259](README.assets/image-20240502145122259.png)
+
+24. 普通弹窗跟alert弹窗有些不一样，普通弹窗的element信息会显示，但是无法定位到alert弹窗上面，得`webDriver.switchTo().alert()`
+
+25. 在xpath中，属性节点跟文本节点都一样的，都是@href/text()
+
