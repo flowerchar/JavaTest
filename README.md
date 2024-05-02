@@ -21,7 +21,7 @@
 
 1. 三种等待：
    1. 直接等待：Thread.sleep()。简单灵活；造成不必要等待
-   2. 隐式等待driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10))。默认**轮询0.5秒**查找元素是否出现，如果没有就抛出异常。注意，**此操作是全局性配置，所有的findElement都会是隐式等待**；隐式等待只会检测元素是否存在，并不会检测元素是否可用
+   2. 隐式等待driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10))。默认**轮询0.5秒**查找元素是否出现，如果没有就抛出异常。注意，**此操作是全局性配置，所有的findElement都会是隐式等待**；隐式等待只会检测元素是否存在，并不会检测元素是否可用。**很好用！！**
    3. 显示等待：new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.id("hhh"))).click() 不仅检测元素出现，还必须是元素可点击了，才会去点击元素
    4. 元素未加载----元素出现了但是还不能交互----元素出现了且可交互
 
@@ -147,4 +147,28 @@
 24. 普通弹窗跟alert弹窗有些不一样，普通弹窗的element信息会显示，但是无法定位到alert弹窗上面，得`webDriver.switchTo().alert()`
 
 25. 在xpath中，属性节点跟文本节点都一样的，都是@href/text()
+
+26. `element click intercepted报错`，首先想到强制等待
+
+27. 一个特别巧妙的xpath：`$x("//*[text()='测试添加商品'/../..//*[text()='删除']]")`
+
+28. 自动化测试应该是一个闭环，每次操作不干净会产生脏数据
+
+29. 流等待的场景是，显示等待中预设的一些条件无法满足，那么就通过流等待自定义灵活的场景。流等待的逻辑是，一直运行，并且捕获异常，直到满足某一个自定义条件才结束
+
+30. ```java
+    fluentWait = new FluentWait<WebDriver>(driver).
+        withTimeout(Duration.ofSeconds(10)).//最大时间10s
+        pollingEvery(Duration.ofMillis(500)).//每隔0.5s运行一次
+        ignoring(ElementClickInterceptedException.class);//忽略程序捕获的这个异常
+        
+    fluentWait.until(driver1->{
+        driver1.findElement(By.cssSelector(".el")).click();
+        return driver.findElement(By.cssSelector(".title"));
+    })//重复点击直到有弹窗提示时停止    
+        
+        
+    ```
+
+31. pom中dependency中顺序不对甚至都会出莫名其妙的bug，allure要在后面。在模块下执行`allure serve .\allure-results\`
 
