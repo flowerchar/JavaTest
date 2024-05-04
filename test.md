@@ -141,6 +141,27 @@
 133. 常见的POST提交数据方式有：**A: text/xml、B: application/x-www-form-urlencoded、C: multipart/form-data、D: application/json**
 134. 以下说法正确的是？**B: JMeter可以做接口测试、C: HttpClient 是Java的接口测试框架|Postman是接口手工测试工具；Fiddler是抓包工具**
 135. 有关Rest-Assured，说法正确的是：**A: 在请求头中带入参数，用header()或headers()方法、B: 请求中通过given().body()传递请求体body、C: then().body() 可以对响应结果进行断言、D: body("code",equalTo(1))是对返回体中的 code 进行断言，要求返回 code值为1** 
+136. 在given()中可以**配置请求头、请求体**等请求信息；在then()中可以对**影响值信息完成断言**；body()方法内可以直接使用**hamcrest断言匹配**
+137. 针对响应体{  "errcode": 0,  "errmsg": "created" }，以下有关响应Response的操作正确的是：**A: 获取HTTP的响应状态码：response.statusCode()、C: 获取json响应body的errcode为：response.path("errcode")|而不是response.body("errcode")**
+138. 有关Rest-Assured说法正确的是？**请求URL在调用when()方法添加，打印请求日志在given()后添加.log().all()，打印响应日志需要在then()后添加.log().all()**
+139. 以下关于接口自动化测试，说法正确的是：**A: JsonSchema断言使用body方法进行判断、B: .body(matchesJsonSchemaInClasspath("json模版"))在then()后面进行调用**
+140. 以下有关JsonPath解析json文件，说法正确的是:**A: JsonPath.parse()方法去进行json文件的解析、C: 进行json路径对应值的修改:documentContext.set(JsonPath路径,要修改后的值);、D: {"name":"${departName1}","parentid":1,"order":88}中name值的JsonPath路径为：$.name**
+141. 有关自定义Filter拦截器，以下说法正确的是:**A: 需要重写io.restassured.filter.Filter接口的filter方法、D: 调用FilterContext的next方法才能执行过滤器的内容**
+142. 有关Rest-Assured框架，以下说法正确的是:**A: get请求编写：when().get(URL).then()、B: post请求编写：when().post(URL).then()、C: get请求编写：given().request("get",URL).then()、D: post请求编写：given().request("post",URL).then()|发送请求没有参数可直接省略given()，使用when()；以上选项都正确**
+143. 有关Rest-Assured框架断言，可以使用**Rest-Assured框架自带断言、JUnit5自带断言、Hamcrest断言**
+144. 接口自动化中，以下选项哪种方式可以使用接口模版获取路径进行参数值替换：**A: Mustache、C: 自定义解析代码**
+145. 在Rest-Assured接口自动化中，变量`response`是用来存储响应内容，以下关于响应`response`的内容，说法正确的是：**A: response.getHeaders()可以用来获取所有响应头、B: `response.print();`打印出来响应正文，作为字符串返回、C: `response.contentType()`用来获取响应的内容类型，作为字符串返回|response.jsonPath()用来获取编码格式为json的响应内容，而不是.text()**
+146. 变量`r`是Response对象，用来存储响应内容，以下关于响应内容，正确的选项是：**A: `r.headers`可以用来获取响应头、B: `r.raw`可以获取原始响应内容、C: `r.content`用来获取二进制的响应内容**|`r.json`用来获取编码格式为json的响应内容，而不是text
+147. token 通常存放在**请求头或请求体中，而不是只存在某一个**
+148. requests通过**json参数发送`Content-Type`为`application/json`的请求信息，通过proxies参数实现接口请求的代理功能，params参数的作用是传递url的键值对**
+149. 如何获取以下请求的响应头信息？r = requests.get('http://ceshiren.com')  **C: r.headers**
+150. json path中$表示什么？**A: 查询根元素**
+151. 如何获取该请求的响应状态码？r = requests.get('https://ceshiren.com')  **r.status_code** 
+152. 接口传递参数对象可以存储在**yaml文件、json文件**
+153. 以下有关Rest-Assured框架的响应时间，说法正确的是:**A: response.time()获取以毫秒为单位的响应时间、B: response.timeIn(TimeUnit.SECONDS)获取指定时间单位秒的响应时间、D: when().get(URL).then().time()获取响应时间|而不是验证响应时间**
+154. 关于弱网测试，以下说法正确的是？**B: 可以使用Charles进行网络代理模拟弱网、C: 2G、3G属于弱网，WI-FI不属于弱网、D: 可以使用fiddler进行网络代理模拟弱网**
+155.  postman参数化有以下哪几种方式：**A: 批量运行时导入csv格式的文件、B: 批量运行时导入json格式的文件、C: Pre-request Scripts编写js脚本、D: 内建变量**
+156. 以下表示请求方式或者响应方式的类型的是：**A: Content-Type|而不是Content-Encoding、Content-Length、Accept**
 
 
 
