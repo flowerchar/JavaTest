@@ -172,3 +172,5 @@
 
 31. pom中dependency中顺序不对甚至都会出莫名其妙的bug，allure要在后面。在模块下执行`allure serve .\allure-results\`
 
+32. xpath跟Css表达式的索引
+

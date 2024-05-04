@@ -76,6 +76,71 @@
 68. 下面关于Cypress 测试框架说法**错误**的是？**B: 底层协议采用的是WebDriver**
 69. 在使用Selenium 进行web自动化测试时， 会用到Capabilities参数， 下面说法不正确的？**D: Capabilities 不能设置在Options当中**
 70. Selenium 代码中可以执行js脚本，说法错误的是？**C: 浏览器的调试页面中执行JS 代码，如果有返回值的话，不会直接展示在控制台上**
+71. 使用 Selenium 多浏览器测试，下面说法正确的是？Selenium 多浏览器测试是为了保证产品的**兼容性**，Selenium 多浏览器测试是跨不同浏览器组合验证网站或者 web 应用程序功能的过程 Selenium 多浏览器测试适用于**面向客户**的网站和组织内部使用的站点
+72. 关于 Selenium 说法正确的是？**selenium 是由三大组件组成，Selenium Webdriver ,Selenium IDE, Selenium Grid selenium IDE 支持安装在Chrome，Firefox,Edge浏览器上 如果希望用例同时执行在多个浏览器多台服务器上，需要Selnium Grid 的支持 Selnium WebDriver 可以模拟点击，滑动等事件的触发**
+73. 自动化测试过程当中关于cookie复用，下面说法正确的是？**B: cookie 可以复用多次、C: 如果cookie存在互踢机制，cookie获取成功之后，就不可以再进行扫码了，否则cookie会失效**
+74. 元素明明被定位到了，但是点击无效，也没报错，关于这个原因下面说法正确的是？**A: 页面加载js，导致点击无效、B: 定位到之后，被突然出现的弹框遮档，导致点击失败、C: 页面存在多个相同属性的元素，导致点击的不是想要操作的那个元素、D: 对于点击无效的元素，可以使用显式等待，等到元素属性完全加载出来再定位**
+75. 关于 selenium 隐藏元素的定位，下面说法正确的是？**A: 隐藏元素可以直接被定位到，但无法被看到、C: 隐藏元素可以通过js执行交互操作**
+76. 下面关于Selenium 定位正确的是？**通过Css或者xpath可以实现父找子、子找父**
+77. 假如一个元素的文本为'百度一下'，以下xpath表达式的文本定位写法正确的是？**A: //*[text()='百度一下'] |文本定位和包含文本定位均为方法，所以需要用括号()的方式调用，属性才需要使用@**
+78. css父子定位中关于nth-child()和nth-of-type()，以下说法正确的是？**nth-child()是找父元素的第几个孩子，nth-of-type()是找父元素的第几个指定标签的孩子**
+79. Selenium中如何获取一个已经定位到的元素ele的文本？**B: ele.text**
+80. 适合做UI自动化测试的场景有哪些？**A: 业务流程不频繁改动、B: UI 元素不频繁改动、C: 需要频繁回归的场景、D: 核心用例场景**
+81. 定位webview页面，需要满足下面哪些条件？**A: 要测试 webview 混合应用模式，需要开启debug enabled模式（Android 6.0版本以上）、B: webview 可以使用chrome 浏览器同步页面、C: driver.content_context 可以获取当前上下文、D: driver.switch_to.context 可以切换到指定的上下文**
+82. 如果想测试一个应用（test.apk），首先要获取这个应用的包名以及启动页面的activity，在windows系统中，下面关于获取这两个信息正确的命令是：**C: adb logcat ActivityManager:I | findstr "cmp"**
+83. 关于 appium 原理，下面描述正确的是：**A: appium 测试 Android App时，使用的是WebDriver 协议、B: Appium 测试 iOS App时，使用的是WebDriver 协议、C: Appium 的核心其实是一个暴露了一系列 RESTful API 的 Server、D: Appium 使用的是 client/server 的设计模式**
+84. 关于android webview 说法正确的是：**webview 理解，webview 是一个特殊的 View，它能用来显示网页，Webview 可以使用 selenium api来操作，Appium 可以测试 webview**
+85. 关于 webview 说法正确的是：**WebView是Android系统中的原生控件，在APP中启用 WebView 调试，开启调试后，Chrome DevTools才能对WebView进行远程调试（Android6.0以上版本），雪球App 包含 Webview。**
+86. 关于DesiredCapabilities 说法不正确的 ？**B: deviceName 能代表设备的唯一标识、C: noReset 启动的时候防止清空app日志**
+87. 如果要在 Appium 中执行多台设备，需要在 desiredCapability 里面指定哪个参数？**B: udid**
+88. 关于消息简易提示框 Toast 控件的解读正确的是：**C: Toast 控件通常使用 Xpath 定位**
+89. appium 对于元素操作，下面说法不正确的是？**D: element.get_attribute("height") 获取元素坐标属性|顶多获取高度而不是坐标**
+90. appium 定位方式中，下面哪些是正确的？**appium 可以使用ID,XPATH,content-des进行元素定位，不支持find_element_by_name进行元素定位。**
+91. 关于 Appium Inspector 说法正确的是？**Appium Inspector可以查看页面的布局结构，录制不同语言的脚本，可以启动session，复用已有session**
+92. 使用 Appium 测试 Android 设备的时候，需要依赖哪些环境：**appium 环境安装需要SDK，JAVA,APPIUM SERVER。**
+93. 定位webview页面，需要满足下面哪些条件？**A: 要测试 webview 混合应用模式，需要开启debug enabled模式（Android 6.0版本以上）、B: webview 可以使用chrome 浏览器同步页面、C: driver.getContextHandles() 可以获取可用上下文的名称、D: driver.context() 不可以切换到指定的上下文，driver.switch_to_context才可以**
+94. appium 定位，appium 可以使用**ID,XPATH,content-des**进行元素定位。
+95. 关于 Appium 的工作引擎，下面说法正确的是？**B: Android 的工作引擎包括 espresso、C: iOS 的工作引擎包括 xcuitest**
+96. 用例在运行过程中经常会出现不稳定的情况，比如这次可以通过，下次就执行失败，如何去提升用例的稳定性？**B: 用例中使用隐式等待或显式等待、C: 不使用绝对定位|千万不要使用强制等待**
+97. 涉及到高性能脚本等等，一定要**避免强制等待**
+98. 关于 selenium 组件下面说法正确的是？**A: selenium 包括三大组件、B: selenium  IDE 用于录制回放脚本、C: selenium Grid 实现分布并发执行用例、D: selenium webdriver 负责自动化测试**
+99. webdriver 提供的常见的驱动程序 有**FireFoxDriver（geckodriver）, InternetExploer Driver.&nbsp; &nbsp;ChromeDriver.&nbsp; Safari Driver**等
+100. 元素位置飘忽不定，原因可能是他的class属性变化或者style属性变化，元素位置一般是由它的class或者style属性决定，所以不能通过class和style定位
+101. 如何定位页面上动态加载的元素，下面解决方法正确的是？**D: 触发动态事件，同时启动隐式等待，然后使用查找元素的方法**
+102. selenium 的工作原理，描述正确的是？**A: 脚本可以启动driver、B: driver 驱动浏览器作为远程服务器、C: 执行脚本时，客户端会发送请求给服务器、D: 服务器解析请求驱动浏览器做出相应的操作，并返回响应给客户端**
+103. selenium 如何处理弹框，下面说法正确的是？**A: 通过 switch_to切换到Windows弹出框、B: alert.accept() 点击弹框”确定“按钮、C: alert.text 获取弹出框里面的内容、D: alert.dismiss() 点击弹框“取消“按钮**
+104. PageObject的设计六大原则，1、方法代表页面的服务，2、不要暴露页面细节 3、不要断言 4、使用return 中转到其它PO 5、不要封装页面所有元素 6、不同结果封装不同的方法
+105.  selenium 可以直接调用js语句，操作web页面
+106. 通过命令开启Chrome浏览器的debug模式，下面命令正确的是？**D: Google\ Chrome --remote -debugging -port = 9222**
+107. 启动浏览器的时候Webdriver 用到的是下列哪个协议？**B: http**
+108. 测试行业里面提的测试金字塔的分层模型包括？金字塔的分层模型分为**UI测试 ，集成/接口测试，单元测试**。
+109. 接口测试不能解决什么问题？**A: UI兼容性测试**
+110. 在发起请求后，requests.get()中的使用哪个默认参数可以定制URL参数信息？**C: param**
+111. 以下选项哪些存在未授权访问漏洞：**A: NFS服务、B: LDAP、C: Jenkins、D: FTP**
+112. 关于TCP与UDP的区别，以下说法正确的是？**UDP支持一对一，一对多，多对一，多对多交互通信；TCP只支持一对一通信**
+113. 以下选项哪些是burpsuite可提供的功能：**A: 可作为代理工具、B: 可进行爬虫、C: 可进行暴力破解、D: 可进行漏洞扫描**
+114. 一个网页从打开到结束包含以下哪些步骤？**A: DNS获取IP地址、B: 建立TCP链接、C: 发送HTTP请求、D: 渲染页面**
+115. 有关 thrift 协议说法正确的是？**A: thrift协议可以快速解析、C: thrift协议和pb协议都是RPC协议**
+116. 以下选项为thrift的技术架构的是：**A: transport、B: protocol、C: server client、D: processor**
+117. 关于HAR包，以下说法正确的是？**A: HAR包可以通过浏览器导出、B: HAR包可以通过代理工具导出、C: 导出的HAR包就是某个接口的数据信息**
+118. 有关 WebSocket 说法正确的是:**A: WebSocket是全双工通信、B: WebSocket允许服务端主动向客户端推送数据**
+119. 以下pb 协议的接口测试正确的是？**A: 是谷歌开源的序列化与反序列化框架、B: pb 框架与语言无关、平台无关、具有可扩展的机制、D: pb是Protocol Buffers的简写、pb 比 XML 性能好，且数据易于解析**
+120. 使用mock技术，可以解决以下哪些场景？**A: mock后端数据，模拟前端测试场景、B: mock硬件设备信息，实现软硬件解耦、C: mock第三方数据信息、并且mock 无法介入或拦截代码中的变量**
+121. 有关Socket说法正确的是：**A: Socket又称套接字、C: 如果测试 Socket 协议，需要利用 Socket 代理，进行 Socket 数据的接收、D: 测试 Socket 协议，需要应用可更改 Socket 地址，才可使用代理、并且Socket 协议的通信，需要连接就可以进行数据的接收**
+122. 有关dubbo协议节点的角色说明正确的是：**Provider为暴露服务的服务提供方、Consumer为调用远程服务的服务消费方；Registry为服务注册与发现的注册中心；Container为服务运行容器**
+123. 关于 Swagger 以下哪个选项是错误的？**A: swagger codegen 功能是一个交互式的在线文档|而是一个代码生成工具**
+124. goreplay录制的流量输出到文件使用的命令行参数为：**A: --output-file**
+125. 下面哪些选项与**接口测试**用例自动生成有关？**A:  Swagger、B: har、C: mustache** **因为Swagger 和 har 可以作为测试用例自动生成的数据源，可以通过mustache 模版工具定制用例格式**
+126. 关于App数据抓包，以下说法正确的是？**D: 手机或模拟器需要配置代理才能通过代理工具进行抓包**
+127. 关于接口测试中基于输入域的测试，包含以下哪些选项？**A: 边界值、B: 特殊字符、C: 参数类型、D: 排重逻辑|还有其他的**
+128. 以下有关goreplay说法正确的是：**A: goreplay是一个抓取流量的工具、B: goreplay支持根据条件进行过滤、C: goreplay可以将HTTP流量捕获并重播到测试环境|goreplay是通过捕获网络请求获取线上流量**
+129. 在接口自动化测试中，如果响应信息为json格式，遇到复杂的断言需要借助哪些工具？**B: jsonpath、D: jsonschema**|而不是json或者xml
+130. 在接口自动化测试中，关于设置代理，以下正确的是？**A: 检查请求信息、B: 检查响应信息|不设置代理也可以执行脚本**
+131. 在接口自动化测试过程中，如何完成断言？**A: 通过接口的响应状态码、B: 接口响应体的部分重要字段、C: 数据库的查询结果|而不是页面上的变化**
+132. 以下关于文件解析、替换正确的是：**A: JsonPath解析调用方法JsonPath.parse()、B: JsonPath只能解析json文件、D: Mustache可以解析json、XML文件**
+133. 常见的POST提交数据方式有：**A: text/xml、B: application/x-www-form-urlencoded、C: multipart/form-data、D: application/json**
+134. 以下说法正确的是？**B: JMeter可以做接口测试、C: HttpClient 是Java的接口测试框架|Postman是接口手工测试工具；Fiddler是抓包工具**
+135. 有关Rest-Assured，说法正确的是：**A: 在请求头中带入参数，用header()或headers()方法、B: 请求中通过given().body()传递请求体body、C: then().body() 可以对响应结果进行断言、D: body("code",equalTo(1))是对返回体中的 code 进行断言，要求返回 code值为1** 
 
 
 
