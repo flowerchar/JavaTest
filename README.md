@@ -176,3 +176,11 @@
 
 
 
+### 三、其他知识
+
+1. 表单数据与json数据
+   1. 表单数据的`Content-Type`通常是`application/x-www-form-urlencoded`；JSON数据的`Content-Type`通常是`application/json`
+   2. post也可以使用表单数据，并不是非得json数据
+   3. requests中POST请求的data参数是表单数据，json数据是json参数；GET请求中的params参数是查询参数(参数拼接在url中)
+2. 表单提交有两种：Application/x-www-form-urlencoded、Multipart/form-data；前者是简单的文本数据，后者是复杂的文件
+
